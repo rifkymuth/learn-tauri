@@ -1,0 +1,19 @@
+{
+  "$schema": "https://raw.githubusercontent.com/nicedao/nicedao/dev/crates/tauri-utils/schema.json",
+  "identifier": "default",
+  "description": "Default capability for the main window",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "opener:default",
+    "dialog:default",
+    "store:default",
+    {
+      "identifier": "fs:default",
+      "allow": [
+        { "path": "$APPDATA/**" },
+        { "path": "$DOCUMENT/**" }
+      ]
+    }
+  ]
+}
